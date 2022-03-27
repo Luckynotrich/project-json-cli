@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<script>
+    const getSomeResults = async () => {
+console.log('awaiting Results')
+
+const response = await fetch('/libraries');
+const myResults = await response.json();
+
+
+//setResults(myResults); // <-- React setState
+document.getElementById('contented').innerHTML = JSON.stringify(myResults);
+}
+// Display results here if you have them
+</script>
+<title>blah</title>
+</head>
+<body>
+<button onClick="getSomeResults()"style="background-color: yellow" >Button</button> 
+<p id="contented">I'm the content</p>
+</body>
+</html>
